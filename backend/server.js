@@ -2,14 +2,20 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+// importing dinosaurRoutes to use them.
+const dinosaurRoutes = require('./routes/dinosaurRoutes');
 
+// middleware to parse JSON bodies
 app.use(express.json());
 app.use(cors());
+// will link /dinosaurs endpoint to
+app.use('/dinosaurs', dinosaurRoutes); // use routes for dinosaurs
 
-mongoose.connect('mongodb://localhost:27017/jurassicpark', { useNewUrlParser: true, useUnifiedTopology: true })
+// connecting to MongoDB atlas 
+mongoose.connect('mongodb+srv://chanhochriskim:Wbfkrlrhddnjs1324@jurassic-park-database.8lpe0.mongodb.net/?retryWrites=true&w=majority&appName=jurassic-park-database', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-app.listen(5000, () => {
-  console.log('Server running on port 5000');
+app.listen(5001, () => {
+  console.log('Server running on port 5001');
 });
