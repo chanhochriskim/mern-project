@@ -3,49 +3,47 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function Reporting() {
-  // States for dropdown selection and filtered data
   const [dinosaurs, setDinosaurs] = useState([]);
   const [selectedCage, setSelectedCage] = useState('');
   const [filteredDinosaurs, setFilteredDinosaurs] = useState([]);
 
-  // Fetch all dinosaurs to populate the dropdown list
   useEffect(() => {
     axios
       .get('http://localhost:5001/dinosaurs')
       .then((response) => {
-        setDinosaurs(response.data);  // Store dinosaurs data for dropdown
+        setDinosaurs(response.data);  // <-- storing dino data for dropdown.
       })
       .catch((error) => {
         console.error('Error fetching dinosaurs:', error);
       });
   }, []);
 
-  // Handle the cage selection change in dropdown
+  // cage selection change part. 
   const handleCageChange = (e) => {
-    setSelectedCage(e.target.value); // Update the selected cage
+    setSelectedCage(e.target.value); // <-- updating with new cage value.
   };
 
-  // Handle report generation (fetch filtered dinosaurs based on selected cage)
+  // report generation (fetch filtered dinosaurs based on selected cage)
   const handleReportClick = () => {
     if (!selectedCage) {
       alert('Please select a cage.');
       return;
     }
 
-    // Sanitize the selectedCage input
-    const sanitizedCage = selectedCage.trim(); // Remove leading/trailing spaces
+    // **sanitize the selectedCage input**
+    const sanitizedCage = selectedCage.trim(); // remove leading/trailing spaces
 
-    // Ensure the cage name is valid
+    // ensuuring cage name is valid.
     if (!sanitizedCage || sanitizedCage.length < 1) {
       alert('Invalid cage name!');
       return;
     }
 
-    // Fetch the filtered dinosaurs based on the selected cage
+    // fetching the filtered dinosaurs based on the selected cage
     axios
       .get(`http://localhost:5001/dinosaurs/report/${selectedCage}`)
       .then((response) => {
-        setFilteredDinosaurs(response.data);  // Store filtered data
+        setFilteredDinosaurs(response.data);  // <-- storing filtered data
       })
       .catch((error) => {
         console.error('Error fetching filtered dinosaurs:', error);
@@ -61,7 +59,6 @@ function Reporting() {
         </header>
       <h2>Dinosaur Report</h2>
 
-      {/* Dropdown for selecting cage */}
       <div>
         <label>
           Select a Cage:
@@ -69,7 +66,7 @@ function Reporting() {
             <option value="">-- Select Cage --</option>
             {dinosaurs
               .map((dino) => dino.cage)
-              .filter((value, index, self) => self.indexOf(value) === index) // Remove duplicates
+              .filter((value, index, self) => self.indexOf(value) === index) // duplicate removers (not sure if this is needed tbh)
               .map((cage, index) => (
                 <option key={index} value={cage}>
                   {cage}
@@ -79,10 +76,10 @@ function Reporting() {
         </label>
       </div>
 
-      {/* Button to generate report */}
+      {/* button to generate new data */}
       <button onClick={handleReportClick}>Generate Report</button>
 
-      {/* Display the filtered dinosaurs based on selected cage */}
+      {/* displaying the filtered dinosaurs within the cage */}
       {filteredDinosaurs.length > 0 && (
         <div>
           <h3>Dinosaurs in Cage {selectedCage}:</h3>

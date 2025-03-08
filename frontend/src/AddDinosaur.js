@@ -2,26 +2,26 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate
+import { useNavigate, Link } from 'react-router-dom'; 
 
 function AddDinosaur() {
   const [dinoName, setDinoName] = useState('');
   const [diet, setDiet] = useState('');
   const [creator, setCreator] = useState('');
   const [cage, setCage] = useState('');
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newDinosaur = { dino_name: dinoName, diet, creator, cage };
 
-    // Send POST request to add dinosaur
+    // POST request to backend (to add a new dinosaur)
     axios
       .post('http://localhost:5001/dinosaurs', newDinosaur)
       .then((response) => {
         alert('Dinosaur added successfully!');
-        navigate('/'); // Navigate to the Dinosaur List page
+        navigate('/'); // back to the front page!
       })
       .catch((error) => {
         console.error('There was an error adding the dinosaur:', error);
@@ -31,7 +31,6 @@ function AddDinosaur() {
   return (
     <div>
       <header>
-        {/* Navigation links */}
         <nav>
           <Link to="/" style={styles.navLink}>Dinosaur List</Link>
         </nav>
@@ -77,7 +76,7 @@ function AddDinosaur() {
     />
   </label>
   <br />
-  <button type="submit">Add Dinosaur</button> {/* Ensure this is of type submit */}
+  <button type="submit">Add Dinosaur</button> 
 </form>
 
     </div>

@@ -2,10 +2,11 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// importing the features
 import DinosaurList from './DinosaurList';
-import AddDinosaur from './AddDinosaur';  // Import the new component
-import UpdateDinosaur from './UpdateDinosaur';  // Import the UpdateDinosaur component
-import Reporting from './Reporting';  // Import the Reporting component
+import AddDinosaur from './AddDinosaur'; 
+import UpdateDinosaur from './UpdateDinosaur';  
+import Reporting from './Reporting';  
 
 function App() {
   return (

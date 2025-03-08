@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 // using Axios to send a GET request to my backend API (which is running on localhost:5001/dinosaurs)
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import parkLogo from './assets/park_logo.jpg';
 
 function DinosaurList() {
   const [dinosaurs, setDinosaurs] = useState([]); // useState() --> to store the fetched data (dinosaurs)
@@ -16,9 +17,9 @@ function DinosaurList() {
         setDinosaurs(response.data);  // Update state with the fetched data
       })
       .catch((error) => {
-        console.error('Error fetching dinosaurs:', error);  // Handle error
+        console.error('Error fetching dinosaurs:', error);  
       });
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, []);
 
   // deleting dinosaur from the list. (no need to have a separate page)
   const deleteDinosaur = (id) => {
@@ -40,7 +41,7 @@ function DinosaurList() {
   return (
     <div>
       <header>
-        {/* Navigation links */}
+      <img src={parkLogo} alt="Park Logo" style={styles.logo} />
         <nav>
           <Link to="/" style={styles.navLink}>Dinosaur List</Link>
           <Link to="/add-dinosaur" style={styles.navLink}>Add Dinosaur</Link>
@@ -53,7 +54,6 @@ function DinosaurList() {
         {dinosaurs.map((dino) => ( // using .map(), to iterate over the dinosaurs array.
           <li key={dino._id}>
             {dino.dino_name} - {dino.diet} - {dino.creator} - {dino.cage}
-            {/* a button to delete dinosaur */}
             <button onClick={() => deleteDinosaur(dino._id)}>Delete</button>
           </li>
         ))}
@@ -63,6 +63,14 @@ function DinosaurList() {
 }
 
 const styles = {
+  header: {
+    textAlign: 'center',
+    padding: '20px',
+  },
+  logo: {
+    width: '200px',
+    height: 'auto',
+  },
   navLink: {
     margin: '0 15px',
     fontSize: '1.2rem',

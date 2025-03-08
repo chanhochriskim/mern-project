@@ -10,7 +10,7 @@ function UpdateDinosaur() {
   const [cage, setCage] = useState('');
   const navigate = useNavigate();
 
-  // Fetch all dinosaurs for the dropdown list
+  // fetch all dinosaurs for the dropdown list
   useEffect(() => {
     axios.get('http://localhost:5001/dinosaurs')
       .then((response) => {
@@ -68,7 +68,6 @@ function UpdateDinosaur() {
       </header>
       <h2>Update Dinosaur</h2>
 
-      {/* Dropdown to select dinosaur */}
       <select 
         value={selectedDino} 
         onChange={handleDinoSelect}
@@ -82,7 +81,6 @@ function UpdateDinosaur() {
         ))}
       </select>
 
-      {/* Form to update selected dinosaur */}
       <form onSubmit={handleSubmit}>
         <label>
           Diet:
