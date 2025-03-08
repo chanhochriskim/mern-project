@@ -32,6 +32,15 @@ function Reporting() {
       return;
     }
 
+    // Sanitize the selectedCage input
+    const sanitizedCage = selectedCage.trim(); // Remove leading/trailing spaces
+
+    // Ensure the cage name is valid
+    if (!sanitizedCage || sanitizedCage.length < 1) {
+      alert('Invalid cage name!');
+      return;
+    }
+
     // Fetch the filtered dinosaurs based on the selected cage
     axios
       .get(`http://localhost:5001/dinosaurs/report/${selectedCage}`)
