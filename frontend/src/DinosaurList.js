@@ -20,7 +20,7 @@ function DinosaurList() {
 
   // deleting dinosaur from the list. (no need to have a separate page)
   const deleteDinosaur = (id) => {
-    if (window.confirm('Are you sure you want to delete this dinosaur?')) {
+    if (window.confirm('Click OK to delete the dinosaur.')) {
       axios 
         .delete(`http://localhost:5001/dinosaurs/${id}`)
         .then((response) => {

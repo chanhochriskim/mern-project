@@ -32,7 +32,6 @@ function AddDinosaur() {
         {/* Navigation links */}
         <nav>
           <Link to="/" style={styles.navLink}>Dinosaur List</Link>
-          <Link to="/add-dinosaur" style={styles.navLink}>Add Dinosaur</Link>
         </nav>
       </header>
       <h2>Add a New Dinosaur</h2>
@@ -50,6 +49,7 @@ function AddDinosaur() {
   <label>
     Diet:
     <select value={diet} onChange={(e) => setDiet(e.target.value)} required>
+      <option value="option">Diet Choice</option>
       <option value="carnivore">Carnivore</option>
       <option value="herbivore">Herbivore</option>
     </select>

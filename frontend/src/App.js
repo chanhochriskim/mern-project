@@ -12,7 +12,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<DinosaurList />} />
           <Route path="/add-dinosaur" element={<AddDinosaur />} />
-          <Route path="/update-dinosaur/:dino_name" component={UpdateDinosaur} />
+          <Route path="/update-dinosaur" element={<UpdateDinosaur />} />
+
         </Routes>
       </div>
     </Router>
