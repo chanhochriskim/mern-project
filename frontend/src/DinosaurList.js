@@ -1,3 +1,5 @@
+// CRUD: Read & Delete (displays a list of dinosaurs. provides a button to delete them.)
+
 import React, { useState, useEffect } from 'react';
 // using Axios to send a GET request to my backend API (which is running on localhost:5001/dinosaurs)
 import axios from 'axios';
@@ -6,7 +8,7 @@ import { Link } from 'react-router-dom';
 function DinosaurList() {
   const [dinosaurs, setDinosaurs] = useState([]); // useState() --> to store the fetched data (dinosaurs)
   // Fetch data from the backend (GET request)
-  // useEffect() --> to send the GET request when the component mounts
+  // useEffect() --> to fetch the list of dinosaurs from backend via API (GET Request)
   useEffect(() => {
     // axios --> makes a GET request to localhost:5001/dinosaurs to fetch the list of dinosaurs from backend.
     axios.get('http://localhost:5001/dinosaurs')
@@ -21,7 +23,7 @@ function DinosaurList() {
   // deleting dinosaur from the list. (no need to have a separate page)
   const deleteDinosaur = (id) => {
     if (window.confirm('Click OK to delete the dinosaur.')) {
-      axios 
+      axios  // each dinosaur has a 'delete' function (DELETE request to backend)
         .delete(`http://localhost:5001/dinosaurs/${id}`)
         .then((response) => {
           alert('Dinosaur deleted successfully!');
@@ -43,11 +45,12 @@ function DinosaurList() {
           <Link to="/" style={styles.navLink}>Dinosaur List</Link>
           <Link to="/add-dinosaur" style={styles.navLink}>Add Dinosaur</Link>
           <Link to="/update-dinosaur" style={styles.navLink}>Update Dinosaur</Link>
+          <Link to="/dinosaur-report" style={styles.navLink}>Dinosaur Reporting</Link>
         </nav>
       </header>
       <h2>Dinosaurs List</h2>
       <ul>
-        {dinosaurs.map((dino) => (
+        {dinosaurs.map((dino) => ( // using .map(), to iterate over the dinosaurs array.
           <li key={dino._id}>
             {dino.dino_name} - {dino.diet} - {dino.creator} - {dino.cage}
             {/* a button to delete dinosaur */}

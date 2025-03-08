@@ -1,3 +1,5 @@
+// CRUD (Create): handles adding a new dinosaur to database via POST request.
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate

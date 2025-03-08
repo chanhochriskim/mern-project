@@ -1,8 +1,11 @@
+// Role in CRUD: Routes the user to different views within CRUD operations. 
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DinosaurList from './DinosaurList';
 import AddDinosaur from './AddDinosaur';  // Import the new component
 import UpdateDinosaur from './UpdateDinosaur';  // Import the UpdateDinosaur component
+import Reporting from './Reporting';  // Import the Reporting component
 
 function App() {
   return (
@@ -13,7 +16,7 @@ function App() {
           <Route exact path="/" element={<DinosaurList />} />
           <Route path="/add-dinosaur" element={<AddDinosaur />} />
           <Route path="/update-dinosaur" element={<UpdateDinosaur />} />
-
+          <Route path="/dinosaur-report" element={<Reporting />} />
         </Routes>
       </div>
     </Router>
@@ -31,7 +34,7 @@ const styles = {
     backgroundColor: '#f0f0f0',
   },
   header: {
-    fontSize: '3rem',
+    fontSize: '4rem',
     marginBottom: '20px',
   },
   navLink: {
