@@ -1,21 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DinosaurList from './DinosaurList';
 import AddDinosaur from './AddDinosaur';  // Import the new component
+import UpdateDinosaur from './UpdateDinosaur';  // Import the UpdateDinosaur component
 
 function App() {
   return (
     <Router>
       <div style={styles.container}>
         <h1 style={styles.header}>Jurassic Park Simulator</h1>
-        {/* Navigation links */}
-        <nav>
-          <Link to="/" style={styles.navLink}>Dinosaur List</Link>
-          <Link to="/add-dinosaur" style={styles.navLink}>Add Dinosaur</Link>
-        </nav>
         <Routes>
           <Route exact path="/" element={<DinosaurList />} />
           <Route path="/add-dinosaur" element={<AddDinosaur />} />
+          <Route path="/update-dinosaur/:dino_name" component={UpdateDinosaur} />
         </Routes>
       </div>
     </Router>

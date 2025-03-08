@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate
 
 function AddDinosaur() {
   const [dinoName, setDinoName] = useState('');
@@ -28,6 +28,13 @@ function AddDinosaur() {
 
   return (
     <div>
+      <header>
+        {/* Navigation links */}
+        <nav>
+          <Link to="/" style={styles.navLink}>Dinosaur List</Link>
+          <Link to="/add-dinosaur" style={styles.navLink}>Add Dinosaur</Link>
+        </nav>
+      </header>
       <h2>Add a New Dinosaur</h2>
       <form onSubmit={handleSubmit}> 
   <label>
@@ -74,5 +81,14 @@ function AddDinosaur() {
     </div>
   );
 }
+
+const styles = {
+  navLink: {
+    margin: '0 15px',
+    fontSize: '1.2rem',
+    textDecoration: 'none',
+    color: 'black',
+  },
+};
 
 export default AddDinosaur;
