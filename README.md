@@ -37,6 +37,7 @@ Stage 2 requirement
   - Dynamic data population using Mongoose for MongoDB.
 
 Running the Jurassic Park Simulator Project
+-
 1. Prerequisites:
 Node.js (version 14.x or above)
 MongoDB Atlas account (for MongoDB cloud database)
