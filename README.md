@@ -1,4 +1,4 @@
-CS348 Project Spring 2025, Jurassic Park Simulator (check if stage 3 is also being fulfilled.) California woohoo mar 14 2025
+CS348 Project Spring 2025, Jurassic Park Simulator California woohoo mar 14 2025
 
 Tech:
 MongoDB with Mongoose (ODM, Database)
