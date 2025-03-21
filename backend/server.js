@@ -11,8 +11,8 @@ app.use(cors());
 // will link /dinosaurs endpoint to
 app.use('/dinosaurs', dinosaurRoutes); // use routes for dinosaurs
 
-// connecting to MongoDB atlas 
-mongoose.connect('mongodb+srv://chanhochriskim:Wbfkrlrhddnjs1324@jurassic-park-database.8lpe0.mongodb.net/?retryWrites=true&w=majority&appName=jurassic-park-database', { useNewUrlParser: true, useUnifiedTopology: true })
+// connecting to MongoDB atlas + the password should be replaced! Jurassicpark1324
+mongoose.connect('mongodb+srv://chanhochriskim:<pwd>@jurassic-park-database.8lpe0.mongodb.net/?retryWrites=true&w=majority&appName=jurassic-park-database', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
