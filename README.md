@@ -1,4 +1,5 @@
-CS348 Project Spring 2025, Jurassic Park Simulator \n
+CS348 Project Spring 2025, Jurassic Park Simulator
+--
 Tech: 
 MongoDB with Mongoose (ODM, Database)
 Express.js (backend API)
