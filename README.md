@@ -121,3 +121,7 @@ MongoDB Atlas:
 
 MongoDB Atlas is used as the cloud database for storing dinosaur information.
 You can view the data added through the MongoDB Atlas Dashboard.
+
+
+Stage 3 Requirement + E.C (CI/CD pipeline using Vercel or AWS)
+-
