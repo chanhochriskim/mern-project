@@ -18,7 +18,7 @@ function AddDinosaur() {
 
     // POST request to backend (to add a new dinosaur)
     axios
-      .post('http://localhost:5001/dinosaurs', newDinosaur)
+      .post('https://ivory-oarlock-456601-r6.ue.r.appspot.com/dinosaurs', newDinosaur)
       .then((response) => {
         alert('Dinosaur added successfully!');
         navigate('/'); // back to the front page!

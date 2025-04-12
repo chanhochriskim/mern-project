@@ -1,7 +1,7 @@
 // CRUD: Read & Delete (displays a list of dinosaurs. provides a button to delete them.)
 
 import React, { useState, useEffect } from 'react';
-// using Axios to send a GET request to my backend API (which is running on localhost:5001/dinosaurs)
+// using Axios to send a GET request to my backend API 
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import parkLogo from './assets/park_logo.jpg';
@@ -11,8 +11,8 @@ function DinosaurList() {
   // Fetch data from the backend (GET request)
   // useEffect() --> to fetch the list of dinosaurs from backend via API (GET Request)
   useEffect(() => {
-    // axios --> makes a GET request to localhost:5001/dinosaurs to fetch the list of dinosaurs from backend.
-    axios.get('http://localhost:5001/dinosaurs')
+    // axios --> makes a GET request to app engine url/dinosaurs to fetch the list of dinosaurs from backend.
+    axios.get("https://ivory-oarlock-456601-r6.ue.r.appspot.com/dinosaurs")
       .then((response) => {
         setDinosaurs(response.data);  // Update state with the fetched data
       })
@@ -25,7 +25,7 @@ function DinosaurList() {
   const deleteDinosaur = (id) => {
     if (window.confirm('Click OK to delete the dinosaur.')) {
       axios  // each dinosaur has a 'delete' function (DELETE request to backend)
-        .delete(`http://localhost:5001/dinosaurs/${id}`)
+        .delete(`https://ivory-oarlock-456601-r6.ue.r.appspot.com/${id}`)
         .then((response) => {
           alert('Dinosaur deleted successfully!');
           // remvoing deleted dinosaur data from the list.

@@ -9,7 +9,7 @@ function Reporting() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5001/dinosaurs')
+      .get('https://ivory-oarlock-456601-r6.ue.r.appspot.com')
       .then((response) => {
         setDinosaurs(response.data);  // <-- storing dino data for dropdown.
       })
@@ -41,7 +41,7 @@ function Reporting() {
 
     // fetching the filtered dinosaurs based on the selected cage
     axios
-      .get(`http://localhost:5001/dinosaurs/report/${selectedCage}`)
+      .get(`https://ivory-oarlock-456601-r6.ue.r.appspot.com/${selectedCage}`)
       .then((response) => {
         setFilteredDinosaurs(response.data);  // <-- storing filtered data
       })

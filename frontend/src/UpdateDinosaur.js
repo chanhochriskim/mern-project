@@ -12,7 +12,7 @@ function UpdateDinosaur() {
 
   // fetch all dinosaurs for the dropdown list
   useEffect(() => {
-    axios.get('http://localhost:5001/dinosaurs')
+    axios.get('https://ivory-oarlock-456601-r6.ue.r.appspot.com/dinosaurs')
       .then((response) => {
         setDinosaurs(response.data);  // Store dinosaur data in state
       })
@@ -28,7 +28,7 @@ function UpdateDinosaur() {
 
     // Fetch the selected dinosaur's details
     if (selected) {
-      axios.get(`http://localhost:5001/dinosaurs/${selected}`)
+      axios.get(`https://ivory-oarlock-456601-r6.ue.r.appspot.com/dinosaurs/${selected}`)
         .then((response) => {
           const dinosaur = response.data;
           setDiet(dinosaur.diet);
@@ -49,7 +49,7 @@ function UpdateDinosaur() {
 
     // Send PUT request to update dinosaur
     axios
-      .put(`http://localhost:5001/dinosaurs/${selectedDino}`, updatedDinosaur)
+      .put(`https://ivory-oarlock-456601-r6.ue.r.appspot.com/${selectedDino}`, updatedDinosaur)
       .then((response) => {
         alert('Dinosaur updated successfully!');
         navigate('/'); // Navigate back to the Dinosaur List page after successful update
