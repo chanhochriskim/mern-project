@@ -52,7 +52,7 @@ Backend Setup (inside /backend)
 - Add the mongodb atlas URI. create a file named app.yaml (or edit it)
 - Mongo_url: “mongodb atlas uri” ← I didn’t include password for security reason.
 - Inside backend, deploy to GCP
-    - Gcloud app deploy After deployment, backend will be hosted at the backend url (I shared above)
+    - Gcloud app deploy After deployment, backend will be hosted at the backend url 
 
 Frontend Setup (inside /frontend)
 -
