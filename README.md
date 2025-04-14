@@ -42,20 +42,25 @@ Running the Jurassic Park Simulator Project
 -
 
 Clone the Project
-Git clone https://github.com/chanhochriskim/mern-project
+-
+- Git clone https://github.com/chanhochriskim/mern-project
 
 Backend Setup (inside /backend)
-Cd backend
-Npm install
-Add the mongodb atlas URI. create a file named app.yaml (or edit it)
-Mongo_url: “mongodb atlas uri” ← I didn’t include password for security reason.
-Inside backend, deploy to GCP
-Gcloud app deploy
-After deployment, backend will be hosted at the backend url (I shared above)
+-
+- Cd backend
+- Npm install
+- Add the mongodb atlas URI. create a file named app.yaml (or edit it)
+- Mongo_url: “mongodb atlas uri” ← I didn’t include password for security reason.
+- Inside backend, deploy to GCP
+    - Gcloud app deploy After deployment, backend will be hosted at the backend url (I shared above)
+
 Frontend Setup (inside /frontend)
+-
 Cd /frontend
 Npm install
 Npm install axios
+
 Deploy Frontend to Firebase
+-
 Npm run build
 Firebase deploy
