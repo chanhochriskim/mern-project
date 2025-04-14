@@ -1,4 +1,4 @@
-CS348 Project Spring 2025 Jurassic Park Simulator
+CS348 Project Spring 2025 Jurassic Park Simulator (final)
 --
 Tech: 
 MongoDB with Mongoose (ODM, Database)
