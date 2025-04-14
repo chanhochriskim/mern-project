@@ -11,6 +11,15 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 204,
 };
+
+app.get('/', (req, res) => {
+  res.send('Backend is working!');
+});
+
+
+app.options('*', cors(corsOptions)); // Handle preflight requests
+app.use(cors(corsOptions));
+
 app.use(cors(corsOptions));
 // middleware to parse JSON bodies
 app.use(express.json());
@@ -23,6 +32,10 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-app.listen(5001, () => {
-  console.log('Server running on port 5001');
+
+// telling GCP to use its assigned port or 8080.
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log('Server running on port ${PORT}');
 });
+

@@ -1,4 +1,4 @@
 runtime: nodejs18
 instance_class: F1
 env_variables:
-  MONGO_URI: "mongodb+srv://chanhochriskim:<pwd>@jurassic-park-database.8lpe0.mongodb.net/?retryWrites=true&w=majority&appName=jurassic-park-database"
+  MONGO_URI: "mongodb+srv://chanhochriskim:Wbfkrlrhddnjs1324@jurassic-park-database.8lpe0.mongodb.net/?retryWrites=true&w=majority&appName=jurassic-park-database"

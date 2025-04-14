@@ -25,7 +25,7 @@ function DinosaurList() {
   const deleteDinosaur = (id) => {
     if (window.confirm('Click OK to delete the dinosaur.')) {
       axios  // each dinosaur has a 'delete' function (DELETE request to backend)
-        .delete(`https://ivory-oarlock-456601-r6.ue.r.appspot.com/${id}`)
+        .delete(`https://ivory-oarlock-456601-r6.ue.r.appspot.com/dinosaurs/${id}`)
         .then((response) => {
           alert('Dinosaur deleted successfully!');
           // remvoing deleted dinosaur data from the list.
