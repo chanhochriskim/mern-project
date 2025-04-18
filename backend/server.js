@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
-// importing dinosaurRoutes to use them.
+// importing dinosaurRoutes to use them!
 const dinosaurRoutes = require('./routes/dinosaurRoutes');
 
 const corsOptions = {
