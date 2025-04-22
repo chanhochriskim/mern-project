@@ -1,5 +1,8 @@
 CS348 Project Spring 2025 Jurassic Park Simulator xoxo
 -
+DISCLAIMER *i purposefully disabled the external IP approach to my mongodb atlas and also took out the atlas-url for security reason.*
+-
+
 Tech: 
 MongoDB with Mongoose (ODM, Database)
 Express.js (backend API)
