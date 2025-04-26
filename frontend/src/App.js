@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// importing the features
+// importing the features im 6 feet from the from the edge and im livingggggg HOLD ME DOWN
 import DinosaurList from './DinosaurList';
 import AddDinosaur from './AddDinosaur'; 
 import UpdateDinosaur from './UpdateDinosaur';  
