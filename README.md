@@ -1,4 +1,4 @@
-Jurassic Park Simulator 
+CS348 Project -- Jurassic Park Simulator 
 -
 DISCLAIMER *i purposefully disabled the external IP approach to my mongodb atlas and also took out the atlas-url for security reason.*
 -
