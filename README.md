@@ -1,6 +1,6 @@
 CS348 Project -- Jurassic Park Simulator 
 -
-DISCLAIMER *i purposefully disabled the external IP approach to my mongodb atlas and also took out the atlas-url for security reason.*
+DISCLAIMER *i showed on the demo video that my app runs properly on GCP / Firebase, but I purposefully omitted the mongodb passcode url for security purpose*
 -
 
 Tech: 
