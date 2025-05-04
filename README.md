@@ -1,4 +1,4 @@
-CS348 Project - Jurassic Park Simulator 
+CS348 Project Jurassic Park Simulator 
 -
 DISCLAIMER *i showed on the demo video that my app runs properly on GCP / Firebase, but I purposefully omitted the mongodb passcode url for security purpose*
 -
